@@ -1,0 +1,34 @@
+#admin {
+    .background {
+        background-color: #fff !important;
+    }
+    .change {
+        color: #464646 !important;
+    }
+    .logo {
+        color: black !important;
+    }
+    .fix {
+        background-color: #ffc800 !important;
+    }
+    .has-treeview:hover {
+        background-color: #ffffff !important;
+    }
+    .bench {
+        margin-top: 3em;
+        width: 37em;
+        border: 1px solid black;
+        height: 40em;
+    }
+    .table-hover tbody td img {
+        width: 2.5em;
+    }
+    .set-size-for-product{
+        width: 20em;
+        height: auto;
+    }
+    ul {
+        padding-left: 0px;
+        list-style: none;
+      }
+}

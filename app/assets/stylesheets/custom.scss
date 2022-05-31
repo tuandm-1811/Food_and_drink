@@ -1,0 +1,131 @@
+.view-for-user{
+  .mega-menu { 
+  width:500px;
+  overflow:hidden;
+  padding:0px;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu-right {
+      right: 0;
+      left: -470px;
+  }
+  .logo{
+    width: 4em;
+  }
+  .nav-item .dropdown-menu .row .col-md-3 .dropdown-item{
+    font-size: 13px;
+  }
+  .menu-right{
+    background-color: white !important;
+  }
+  .block-preview{
+    height: 30em;
+  }
+  .container .row .col-lg-4{
+    margin-top: 4%;
+  }
+  .items{
+    margin-top: 1em;
+  }
+  .carousel{
+    width: 2em; 
+  }
+  .all-meal{
+    height: 26em;
+    width: 17em;
+  }
+  .partner-bottom{
+    width: 16em;
+  }
+  .carousel-icon{
+    width: 2em;
+  }
+  .carousel{
+    width: 50em;
+  }
+  .fix-size-for-carousel{
+    width: 49em;
+  }
+  .fix-size-category{
+    width: 4em;
+  }
+  .right-side{
+    margin-left: 2em !important;
+    margin-top: -50px !important;
+  }
+  .table-hover tbody img{
+    width: 60px;
+  }
+  .quantity{
+    width: 63px !important;
+  }
+  .tital{
+    padding: 20px;
+  }
+  .public-1{
+    margin: 4px;
+  } 
+  .cart{
+    padding: 20px;
+  }
+  .cart .public{
+    padding: 17px;
+  }
+  .col-md-9 b{
+    font-size: 13px;
+  }
+  .col-md-3 p{
+    text-align: center;
+    font-size: 13px;
+  }
+  .pagination , .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+    color: #ffffff;
+}
+.pagination span.current{
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: #ffa803;
+  border: 1px solid #ffa803;
+  color: #ffffff;
+}
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+  footer{
+    margin-top: 2em;
+  }
+  
+}

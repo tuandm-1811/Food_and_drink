@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/tvbach/PR2001_PJ2_Food_and_Drink/app/controllers/cart_items_controller.rb:7 CartItemsController#create:
+
+     [1;34m2[0m:   skip_before_action [33m:verify_authenticity_token[0m
+     [1;34m3[0m:   before_action [33m:authenticate[0m
+     [1;34m4[0m:   before_action [33m:get_current_cart[0m
+     [1;34m5[0m:   [32mdef[0m [1;34mcreate[0m
+     [1;34m6[0m:     
+ =>  [1;34m7[0m:     binding.pry
+     [1;34m8[0m:     
+     [1;34m9[0m:     @cart_item = @cart.cart_items.find_by [35mproduct_id[0m: cart_item_params[[33m:product_id[0m]
+    [1;34m10[0m:     [32mif[0m @cart_item 
+    [1;34m11[0m:       tatal_quantity = cart_item_params[[33m:quantity[0m].to_i + @cart_item.quantity
+    [1;34m12[0m:       @cart_item.assign_attributes [35mquantity[0m: tatal_quantity ,
+

@@ -1,0 +1,16 @@
+<div class="main-comments">
+  <div class="comment-1">
+    <div class="user-detail-heading">
+      <b> <%= comment.user.name %> </b>
+    </div>
+    <div class="reply-time">
+      <p>
+        <i class="far fa-clock"></i>
+        <%= time_ago_in_words(comment.created_at) if comment.created_at %> ago.
+      </p>
+    </div>
+    <div class="comment-description">
+      <p id="content-comment"><%= comment.content%></p>
+    </div>
+  </div>
+</div>

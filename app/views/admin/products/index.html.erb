@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h2 >Products</h2>
+  </div>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name Product</th>
+          <th> Information </th> 
+          <th>Old Price</th>
+          <th>Price</th>
+          <th>Style</th>
+          <th> Action </th>
+        </tr>
+      </thead>
+      <tbody id="myTable">  
+      <tbody>  
+        <% @products.each_with_index  do |product, index| %>
+        <%= render 'product', product: product, index: index %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

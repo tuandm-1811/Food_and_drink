@@ -1,0 +1,9 @@
+vi:
+  homepages:
+    home:
+      title: Chọn, Đặt hàng, Thanh toán
+      exeption: Chỉ định địa chỉ của bạn để đề xuất cho bạn giao hàng nhanh
+      gotomail: Danh sách sản phẩm
+      searchfood: Tìm đồ ăn
+      worktext1: Chọn nhà hàng gần đây
+      worktext2: Luôn mang đến cho bạn những gì tốt nhất

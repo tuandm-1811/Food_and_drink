@@ -1,0 +1,16 @@
+<tr>
+  <td><%= index +1 %></td>
+  <td><%= image_tag(category.image) if category.image.attached?%></td>
+  <td><%= category.name %></td>
+  <td>
+    <%= link_to edit_admin_category_path(category) do %>
+      <i class='fas fa-wrench' style='color: black'></i>
+    <% end %>
+    <%= link_to admin_category_path(category), method: :delete , remote: true, class:"delete-category" do %>
+      <i class='far fa-trash-alt' style='color: black'></i>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "List Products", admin_category_path(category) , class:"btn btn-outline-warning"%>
+  </td>
+</tr>

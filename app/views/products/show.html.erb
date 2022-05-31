@@ -1,0 +1,238 @@
+<section class="title-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="left-title-text">
+          <h3>Product detail View</h3>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="right-title-text">  
+          <ul>
+            <li class="breadcrumb-item">
+              <%= link_to "Home", root_url %>
+            </li>
+            <li class="breadcrumb-item">
+              <%= link_to "All Meals", products_path %>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><%=@product.name_product%></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="all-partners">      
+  <div class="container">   
+    <div class="row">         
+      <div class="col-lg-8 col-md-8">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <% @product.images.each_with_index do |image, index| %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" 
+              class="<%= index == 0 ? 'active' : '' %>">
+              </li>
+            <% end %>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag @product.images.first, class:"fix-size-for-carousel" %>
+            </div>
+            <% @product.images.drop(1).each do |image| %>
+              <div class="carousel-item">
+                <%= image_tag image, class:"fix-size-for-carousel" %>
+              </div>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        <div class="resto-meal-dt">
+          <div class="resto-detail">
+            <div class="resto-picy">
+              <%= link_to category_path(@product.category.id) do %>
+              <%= image_tag @product.category.image , class:"fix-size-category" %>
+              <% end %>
+            </div>
+          </div> 
+          <div class="name-location">
+            <%= link_to category_path(@product.category.id) do %>
+            <h1><%= @product.category.name %></h1>
+            <% end %>
+            <div class="right-side-btns">
+          <div class="bagde-dt">
+            <div class="partner-badge">
+              Rating
+            </div>
+          </div>
+          <div class="resto-review-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>4.5/5</span>
+          </div>
+        </div>
+          </div>
+        </div>
+        <div class="published-like-comments">
+          <div class="published-time">
+            <h4>Feedback</h4>
+          </div>
+          <div class="like-comments">
+            <ul>
+              <li>
+                <%= link_to like_product_path(@product), class:"like-btn" , method: :put, remote: :true do %>
+                <span class="views" data-toggle="tooltip" data-placement="top" title="Like">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <% end %>
+                <span class="likes-count"><%= @product.get_upvotes.size %></span>
+              </li>
+              <li>
+                <span class="views" data-toggle="tooltip" data-placement="top" title="Comments">
+                  <i class="fas fa-comment-alt"></i>
+                  <ins><%=@comments.count%></ins>
+                </span>
+              </li>
+              <li>
+                <div class="btn-group social-share">
+                  <span class="dropdown-toggle-no-caret views" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="main" title="share">
+                    <i class="fas fa-share-alt"></i>
+                    <ins>Share</ins>
+                  </span>
+                </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="all-tabs">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <%= link_to product_comments_path(@product), class:"nav-link active" do %>
+                  <b class="quality-comment"><%= pluralize(@comments.count, "comment")%></b>
+                  <span class="text-comment"></span> 
+                <% end %>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" role="tabpanel" id="comments">
+                <div class="comment-post">
+                  <div class="post-items">
+                    <div class="img-dp">
+                      <i class="fas fa-user"></i>
+                    </div>
+                    <% args = (signed_in?)? [current_user,@comment] : [@product,@comment] %>
+                    <%= form_for args, remote:true do |f|%>
+                      <%= f.text_field :content, class:"post-input", placeholder:"Write a comment"%>
+                      <%= f.hidden_field :product_id, value: @product.id %>
+                      <% if signed_in?%>
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+                      <% end %>
+                      <%= f.submit "Post comment", class:"submit-btn btn-link"%>
+                    <% end %>
+                  </div>
+                </div>
+                <% if @comments.blank? %>
+                <div class="main-comments">
+                  <div class="comment-1">
+                    <h3>Post a comment for this product</h3>
+                  </div>
+                </div>
+                <% else %>
+                  <% @comments.each do |comment|%>
+                    <%= render 'comment', comment: comment  %>
+                  <% end %>
+                <% end %>
+                <div class="main-pagination">
+                  <%= paginate @comments %>
+                </div>   
+              </div>      
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="right-side">
+          <div class="new-heading t-bottom">
+            <h1><%= @product.name_product%></h1>
+          </div>
+          <div class="about-meal">
+            <h4> Description</h4>
+            <p><%= @product.information%></p>
+          </div>
+          <div class="price">
+            <% if @product.old_price.present? %>
+              <strike>
+                <span>$<%= @product.old_price%>.00</span>  
+              </strike>
+            <% end %>
+            <span data-price="<%= @product.price %>" id="product-price">
+              <h4>Price: $<%= @product.price%>.00</h4>
+            </span>
+          </div>
+          <div class="dt-detail">
+            <ul>
+              <li>
+                <div class="delivery">
+                  <i class="fas fa-shopping-cart"></i>Delivery Free : Free
+                </div>
+              </li>
+              <li>
+                <div class="time">
+                  <i class="far fa-clock"></i>Delivery Time : 30 Min
+                </div>
+              </li>
+            </ul>
+          </div>
+          <%= form_for @cart_item, remote:true do |f| %>
+            <div class="Extra-option">
+              <h4> Extras - <ins>(Please select any option)</ins></h4>
+              <div class="non-veg j-top">
+                <h6>Non Vegetarian</h6>
+              </div>
+            <div class="Qty">
+              <h4> Quantity</h4>
+              <div class="input-group">
+                <%= f.number_field :quantity, in: 1..99, step:1,
+                 class:"qty-control", id:"qty_input", value:"1"%>
+              </div>
+            </div>
+            <div class="total-cost">
+              <div class="total-text">
+                  <h5>Total</h5>
+              </div>
+              <div class="total-price">
+                  <p id="tatal-product">$<%= "#{@product.price}" %>
+                  </p>
+              </div>
+            </div>
+            <div class="order-now-check">
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= f.submit "Add Cart", class:"on-btn btn-link add-cart" %>
+            <span class="alert alert-info" style="display:none;" >
+               Add cart succsessed
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section> 
+<script>
+  $("#qty_input").change(function() {
+    const productPrice = $("#product-price").data("price");
+    var convert = parseInt($("#qty_input").val());
+    var tatal;
+    var result;
+    tatal = productPrice * convert;
+    result = document.getElementById("tatal-product").innerHTML = "$" + tatal;
+  });
+  $(".add-cart").click(function(){
+    $(".alert-info").show().fadeOut(1000);
+  });
+</script>

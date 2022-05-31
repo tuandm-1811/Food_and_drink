@@ -1,0 +1,142 @@
+<section class="block-preview">
+  <div class="cover-banner" style="background-image: url(https://images3.alphacoders.com/922/922680.jpg)"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <div class="left-text-b">
+          <h1 class="title"><%= t ".title"%></h1>
+          <h6 class="exeption"><%= t ".exeption"%></h6>
+          <p>Get our services from 24 hours.</p>
+          <a class="bnr-btn btn-link" href="<%= products_path %>"><%= t ".gotomail"%></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="browse-places">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3> Browse Places </h3>
+      </div>
+    </div>
+  </div>
+  <div class="container items">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_coffee.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Coffee More</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_drink.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Drink & Nightkise</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_cake.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Desserts & Cakes</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_open.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Newly Opened</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_even.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Upcoming Event</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="owl-carousel">
+          <div class="item">
+            <%= image_tag 'brower_gps.png', class:'carousel-icon' %>
+          </div>
+          <div class="place">
+            <h4>Near by</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--how-to-work start-->
+<section class="how-to-work">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="work-item">
+          <div class="work-img">
+            <%= image_tag 'icon3.png' %>
+          </div>
+          <div class="work-text">
+            <h4><%= t ".worktext1"%></h4>
+            <p><%= t ".worktext2"%></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="work-item">
+          <div class="work-img">
+           <%= image_tag 'icon4.png' %>
+         </div>
+         <div class="work-text">
+          <h4>Choose Food</h4>
+          <p>Donec et tellus sed lorem condimentum maximus. Sed tempor, leo tempus condimentum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="work-item">
+        <div class="work-img">
+         <%= image_tag 'icon5.png' %>
+       </div>
+       <div class="work-text">
+        <h4>Delivery</h4>
+        <p>Donec et tellus sed lorem condimentum maximus. Sed tempor, leo tempus condimentum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="order-food-online">
+  <div class="container footter">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="new-heading">
+          <h1> Order Food Online In Your Area </h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <% @products.each do |product|%>
+        <%= render 'product', product: product %>
+      <% end %>
+    </div>
+  </div>
+</section>
