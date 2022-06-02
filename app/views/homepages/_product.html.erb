@@ -25,7 +25,7 @@
     <div class="bottom">
       <div class="sub-heading">
         <h3>
-          <%= link_to "#" do %>
+          <%= link_to category_product_path(product.category.id,product) do %>
             <%= product.category.name%>
           <% end %>
         </h3>

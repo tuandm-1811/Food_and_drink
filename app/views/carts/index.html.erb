@@ -1,5 +1,6 @@
 <% if @cart_items.blank? %>
     <h3 style="text-align: center;">You haven't product in cart </h3>
+    <a class="bnr-btn btn-link go_to_meal" href="<%= products_path %>"><%= "Go and get some meal for your self"%></a>
 <% else %>
   <div class="container">
     <h2 style="text-align: center; margin-bottom: 10px;">My Cart</h2>

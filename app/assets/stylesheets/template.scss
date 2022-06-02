@@ -7339,11 +7339,6 @@ and something more appropriate for display headings */
         min-height: 50px;
     }
     /*** My Orders ***/
-    .my-orders {
-        float: left;
-        margin-top: 30px;
-        width: 100%;
-    }
     .checkout-thumb-2 {
         float: left;
         margin-right: 15px;
@@ -7352,9 +7347,6 @@ and something more appropriate for display headings */
         width: 50px;
         height: 50px;
         border-radius: 3px;
-    }
-    .my-orders tbody tr td:nth-child(1) {
-        width: 40%;
     }
     .name-dt h4 {
         font-size: 16px;
@@ -8030,6 +8022,9 @@ and something more appropriate for display headings */
     .link-dt .form-group {
         margin-top: 25px;
         margin-bottom: 5px;
+    }
+    .go_to_meal{
+        margin-left: 740px;
     }
     // .badge {
     //     color: #fff;
