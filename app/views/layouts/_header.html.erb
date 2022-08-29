@@ -7,19 +7,20 @@
             <div class="topbar-left text-center text-md-left">
               <ul class="list-inline">
                 <li> <a href="#"> Blog </a></li>
-                <li> <a href="#"> Contact </a></li>
-                <li> <a href="#"> About Us </a></li>  
+                <li> <a href="#"> Liên lạc </a></li>
+                <li> <a href="#"> Về chúng tôi </a></li>  
               </ul>
             </div>
           </div>
           <div class="col-md-8">
             <div class="topbar-right text-center text-md-right">
-              <ul class="list-inline">                
+              <ul class="list-inline">  
+                <li><a href="#"><i class="far fa-calendar-alt"></i> Đặt hàng</a> </li>
+                <li><a href="#"><i class="far fa-bookmark"></i> Thêm vào yêu thích </a></li>                 
                 <li id="quantity-cart-item">
-
                   <%= link_to carts_path do %>
                     <i class="fas fa-shopping-cart"></i>
-                    Food Orders 
+                    Đơn hàng 
                     <span class="badge badge-pill badge-warning">
                       <%= link_to "#{current_cart.cart_items.size}", carts_path  %>
                     </span>
@@ -29,15 +30,15 @@
                   <li class="nav-item dropdown">
                     <a  class="dropdown-toggle-no-caret" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i><%= current_user.name%><i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
-                      <%= link_to "My Profile", user_path(current_user.id), class:"dropdown-item"%>
+                      <%= link_to "Thông tin của tôi", user_path(current_user.id), class:"dropdown-item"%>
                       <%= button_to logout_path,  method: "delete", class:"dropdown-item" do%>
-                        Logout <i class="fa fa-sign-out"></i> 
+                        Đăng xuất <i class="fa fa-sign-out"></i> 
                       <% end %>
                     </div>
                   </li>   
                 <% else %>
                   <li class="nav-item">
-                    <%= link_to 'Login' , login_path, class:"nav-link" %>
+                    <%= link_to 'Đăng nhập' , login_path, class:"nav-link" %>
                   </li>
                 <% end %>              
               </ul>
@@ -64,6 +65,45 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto nav-text header_text">
+                    <li class="nav-item active">
+                      <%= link_to "Trang chủ", root_path, class:"nav-link"%>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Nhà hàng</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Cộng sự</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle-no-caret" href="#" id="megaDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Danh sách <i class="fas fa-caret-down"></i></a>                                                   
+                      <div class="dropdown-menu mega-menu dropdown-menu-right mega_box_dropdown"> 
+                        <div class="row dropdown_menu_header">
+                          <div class="col-md-3">
+                            <a class="dropdown-item" href="#"> Cộng sự</a>
+                            <a class="dropdown-item" href="#"> Trở thành cộng sự </a>
+                            <a class="dropdown-item" href="#"> Thêm nhà hàng</a>
+                          </div>
+                          <div class="col-md-3">                                            
+                            <a class="dropdown-item" href="#"> Cà phê và hơn nữa</a>
+                            <a class="dropdown-item" href="#"> Sự kiện sắp tới </a>
+                            <a class="dropdown-item" href="#"> Chi tiết sự kiện</a>
+                          </div>
+                          <div class="col-md-3">                              
+                            <a class="dropdown-item" href="#"> Blog của chúng tôi</a>
+                            <a class="dropdown-item" href="#"> Chi tiết về blog</a>
+                            <a class="dropdown-item" href="#"> Liên lạc</a>
+                          </div>
+                        </div>
+                      </div>  
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Khám phá </a>
+                    </li>
+                  </ul>                     
+                </div>
               </nav>
             </div>
           </div>

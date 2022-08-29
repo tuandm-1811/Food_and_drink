@@ -3,7 +3,7 @@
   <!-- Brand Logo -->
   <%= link_to admin_home_path, class:"brand-link" do%>
     <%= image_tag "admin.png", class:"brand-image img-circle elevation-3" , style:"opacity: .8"%>
-    <span class="brand-text font-weight-light">Admin System</span>
+    <span class="brand-text font-weight-light">Hệ thống quản trị</span>
   <% end %>
   <!-- Sidebar -->
   <div class="sidebar">
@@ -13,7 +13,7 @@
          <%= image_tag "admin-1.png", class:"img-circle elevation-2"%>
       </div>
       <div class="info">
-        <%= link_to "FAST FOOD",admin_home_path, class:"d-block logo" %>
+        <%= link_to "Thức ăn nhanh",admin_home_path, class:"d-block logo" %>
       </div>
     </div>
 
@@ -24,26 +24,9 @@
              with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie change"></i>
-              <p class="change">
-                Charts
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon change"></i>
-                  <p class="change">ChartJS</p>
-                </a>
-              </li>
-            </ul>
-        </li>
-        <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table change"></i>
               <p class="change">
-                Tables
+                Danh sách
                 <i class="fas fa-angle-left right change"></i>
               </p>
             </a>
@@ -51,19 +34,13 @@
               <li class="nav-item">
                 <%= link_to admin_categories_path, class:"nav-link" do%>
                   <i class="far fa-circle nav-icon change"></i>
-                  <p class="change">Category Tables</p>
+                  <p class="change">Bảng danh mục </p>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to admin_products_path, class:"nav-link" do%>
                   <i class="far fa-circle nav-icon change"></i>
-                  <p class="change">List Products</p>
-                <% end %>
-              </li> 
-              <li class="nav-item">
-                <%= link_to admin_toppings_path, class:"nav-link" do%>
-                  <i class="far fa-circle nav-icon change"></i>
-                  <p class="change">List Toppings</p>
+                  <p class="change">Liệt kê sản phẩm</p>
                 <% end %>
               </li> 
             </ul>

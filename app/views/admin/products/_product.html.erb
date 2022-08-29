@@ -12,7 +12,7 @@
     <%= link_to edit_admin_category_product_path(product.category.id,product) do %>
       <i class='fas fa-wrench' style='color: black'></i>
     <% end %>
-    <%= link_to admin_category_product_path(product.category.id, product), remote: true, method: :delete, data: {confirm: "Are you sure?"}, class:"delete-product" do %>
+    <%= link_to admin_category_product_path(product.category.id, product), remote: true, method: :delete, data: {confirm: "Bạn chắc chứ?"}, class:"delete-product" do %>
       <i class='far fa-trash-alt' style='color: black'></i>
     <% end %>
   </td>

@@ -8,7 +8,7 @@
           <div class="row display-payment">
             <div class="col-md-4">
               <div class="form-group" style="margin-top: 1em">
-                <label>Option payment</label>
+                <label>Thanh toán tùy chọn</label>
                 <%= f.select :payments, Order.payments.keys ,{}, class: 'form-control'%>
               </div>
             </div>
@@ -26,9 +26,7 @@
                 <li class="payment-online">
                   <%= image_tag 'VTB.jpg', style: 'width:5em;' %>
                 </li>
-                <li class="payment-online">
-                  <%= image_tag 'VCB.jpg', style: 'width:5em;' %>
-                </li>
+               
              </ul>
             </div>
           </div>
@@ -37,19 +35,19 @@
             <%= f.hidden_field :cart_id, value: current_cart.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.submit "ORDER NOW", class:"btn btn-danger"%>
-            <p>(Xin vui lòng kiểm tra lại đơn hàng trước khi Đặt Mua)</p>
+            <p>(Xin vui lòng kiểm tra lại đơn hàng trước khi đặt mua)</p>
           </div>
         </div>
         <div class="col-sm-3 information">
           <div class="information-user">
             <div class="tital"> 
-              <h5> Address </h5>
+              <h5> Địa chỉ </h5>
               <hr class="public-1">
               <div class="address">
                 <% @address.each do |address|%>
                   <b><%= address.user_name %></b>
                   <p><%= address.stress+'-'+address.district+'-'+address.wards+'-'+address.province+'-Viet Nam' %><p>
-                  <p>Phone number: 0<%= address.numberphone%></p>
+                  <p>Số điện thoại: 0<%= address.numberphone%></p>
                 <% end %>
                 <span></span>
               </div>
@@ -58,7 +56,7 @@
         <div class="order-sumary">
           <div class="tital">
             <h5>
-              Cart(<span><%=current_cart.products.count%> products</span>)
+              Giỏ hàng(<span><%=current_cart.products.count%> sản phẩm</span>)
               <%=link_to "Edit", carts_path, class:"btn btn-outline-dark" %>
             </h5>
             <hr class="public-1">
@@ -66,33 +64,33 @@
           <div class="cart">
             <div class="row public">
               <% @cart_items.each do |cart_item| %>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <b><%= cart_item.quantity %>x <span><%=cart_item.product.name_product%></span></b>
                 </div>
-                <div class="col-md-3">
-                  <p>$<%=cart_item.total_product.to_f%> </p>
+                <div class="col-md-1">
+                  <p><%=cart_item.total_product.to_f%>VND</p>
                 </div>
                 <hr class="public-1">
               <% end %>
             </div>
             <hr class="public-1">
             <div class="row public">
-              <div class="col-md-9">
-                <b>Provisional total:</b>
+              <div class="col-md-6">
+                <b>Tạm tính:</b>
                 <b>Coupons: </b>
               </div>
               <div class="col-md-3">
-                <b>$<%= current_cart.total_amount.to_f%></b>
-                <b>$<%= current_cart.coupons.to_f %></b>
+                <b><%= current_cart.total_amount.to_f%>VND</b>
+                <b><%= current_cart.coupons.to_f %>VND</b>
               </div>
             </div>
             <hr class="public-1">
             <div class="row public">
-              <div class="col-md-8">
-                <b>Total order:</b>
+              <div class="col-md-6">
+                <b>Tổng đơn:</b>
               </div>
-              <div class="col-md-4">
-                <h5 style="color:red;">$<%= current_cart. total_price_after_coupons.to_f %></h5>
+              <div class="col-md-2">
+                <h5 style="color:red;"><%= current_cart. total_price_after_coupons.to_f %>VND</h5>
               </div>
             </div>
           </div>

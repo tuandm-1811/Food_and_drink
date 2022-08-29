@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'homepages#home'
   namespace :admin do
     get 'home', to: 'homepages#index'
-    get 'chat', to: 'chat#index'
+    get 'conversations', to: 'conversations#index'
     get 'search', to: 'homepages#search'
     resources :categories do 
       resources :products
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
       resources :messages, only: [:create]
     end
-    resources :orders, only: [:index]
+    resources :orders, only: [:index, :show, :destroy]
   end
 
 
@@ -25,12 +25,13 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  as :user do  
+  devise_scope :user do  
     get 'login', to: 'devise/sessions#new'
     post 'signup' , to: 'devise/registrations#create'
     get 'signup', to: 'devise/registrations#new'
     get 'edit', to: 'devise/registrations#edit'
     delete 'logout', to: 'devise/sessions#destroy'
+    get 'forget', to: 'devise/passwords#new'
   end
   resources :products, only:[:index]
   resources :products, only:[:show] do
@@ -43,7 +44,7 @@ Rails.application.routes.draw do
   resources :users, except:[:destroy, :index] do
     resources :comments, only:[:create, :destroy]
   end 
-  resources :users, only:[:show] do
+  resources :users, only:[:show, :destroy, :show] do
     resources :addresses
   end
   resources :carts, only:[:create, :index]

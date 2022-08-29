@@ -1,61 +1,71 @@
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h3>Địa chỉ giao hàng</h3>
-      <b>Chọn địa chỉ có săn bên dưới:</b>
+      <b>Chọn địa chỉ có sẵn bên dưới:</b>
+      <p>Bạn có muốn thêm một địa chỉ khác?<b>
+        <br/>
+        <span id="create-address">Thêm địa chỉ mới</span>
+      </b></p>
     </div>
     <% @addresses.each do |address|%>
       <div class="col-md-6">
         <div class="address-list">
           <div class="address-item ">
             <b><%= address.user_name%></b>
-            <p>Address: <%= address.stress+'-'+address.district+'-'+address.wards+'-'+address.province%></p>
-            <p> Viet Nam</p>
-            <p>Phone Number: 0<%=address.numberphone%></p>
+            <p>Địa chỉ: <%= address.stress+'-'+address.district+'-'+address.wards+'-'+address.province%></p>
+            <p> Việt Nam</p>
+            <p>Số điện thoại: <%=address.numberphone%></p>
             <%= form_tag new_order_path,class:"form-address", method: :get do %>
               <%= hidden_field_tag "address_id[]", address.id, class:"form-check-input"%>
-              <%= submit_tag "Choose this address", class:"btn btn-secondary" %>
+              <%= submit_tag "Chọn địa chỉ này", class:"btn btn-secondary" %>
             <% end %>
-            <%= link_to "Delete",user_address_path(current_user.id, address), method: :delete , remote: true, class:"btn btn-secondary", method: :get %>
+            <%= link_to "Xóa địa chỉ",user_address_path(current_user.id, address.id), id: "address-delete", method: :delete , remote: true, class:"btn btn-secondary" %>
           </div>
         </div>
       </div>
     <% end %> 
-    <p>Do you want to add an other address?<b>
-      <br/>
-      <span id="create-address">Add new address</span>
-    </b></p>
   </div>
   <div class="new-address">
     <div class="form-container">
       <%= form_for current_user.addresses.build, url: user_addresses_path(current_user.id), html: {class: 'form-adress' }, remote:true do |f|%>
-        <div class="form-item">
-          <label>Full Name</label>
-          <%= f.text_field :user_name, class:"input-1", placeholder:"Enter name"%>
+        <div class="video-form">
+          <label>Họ và tên</label>
+          <%= f.text_field :user_name, class:"input-1", placeholder:"Nhập họ và tên"%>
         </div>
-        <div class="form-item">
-          <label>Phone number</label>
-          <%= f.text_field :numberphone, class:"input-2",placeholder:"Enter phone number"%>
+        <div class="video-form">
+          <label>Số điện thoại</label>
+          <%= f.text_field :numberphone, class:"input-2",placeholder:"Nhập điện thoại"%>
         </div>
-        <div class="form-item">
-          <label>Province</label>
-          <%= f.text_field :province, class:"input-6",placeholder:"Enter province"%>
+        <div class="video-form">
+          <label>Địa bàn tỉnh</label>
+          <%= f.text_field :province, class:"input-3",placeholder:"Nhập địa bàn tỉnh"%>
         </div>
-        <div class="form-item">
-        <label>District</label>
-          <%= f.text_field :district, class:"input-4",placeholder:"Enter district"%>
+        <div class="video-form">
+        <label>Huyện</label>
+          <%= f.text_field :district, class:"input-4",placeholder:"Nhập huyện"%>
         </div>
-        <div class="form-item">
-        <label>Wards</label>
-          <%= f.text_field :wards, class:"input-3",placeholder:"Enter wards"%>
+        <div class="video-form">
+        <label>Phường</label>
+          <%= f.text_field :wards, class:"input-5",placeholder:"Nhập phường"%>
         </div>
-        <div class="form-item">
-        <label>Stress</label>
-          <%= f.text_field :stress, class:"input-5",placeholder:"Enter stress"%>
+        <div class="video-form">
+        <label>Đường phố</label>
+          <%= f.text_field :stress, class:"input-6",placeholder:"Nhập đường phố"%>
         </div>
-        <div class="form-item">
-          <%= f.submit "Add address", class:"btn btn-primary"%>
+        <div class="button_address">
+          <%= f.submit "Thêm địa chỉ", class:"btn btn-primary"%>
         </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-md-2 col-sm-12 col-xs-12">
+  <div class="menu-left text-center text-md-left">
+    <div class="logo-box">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo1.jpg', class:"logo" %> 
       <% end %>
     </div>
   </div>

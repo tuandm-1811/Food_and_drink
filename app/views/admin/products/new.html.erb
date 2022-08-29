@@ -1,25 +1,25 @@
 <div class="container bench">
-  <h2> Generate Product </h2>
+  <h2> Tạo sản phẩm </h2>
   <%= form_for @product, url:admin_category_products_path(@category)do |f| %>
   <%# [:admin, @category.products] %>
   <div class="form-group">
-    <label>Name Product</label>
-    <%= f.text_field :name_product , placeholder:"Enter name product", class:"form-control",required: 'true' %>
+    <label>Tên sản phẩm</label>
+    <%= f.text_field :name_product , placeholder:"Nhập tên sản phẩm", class:"form-control",required: 'true' %>
   </div>
   <div class="form-group">
-    <label>Information</label>
-    <%= f.text_area :information ,  placeholder:"Enter desciption", class:"form-control",required: 'true'%>
+    <label>Thông tin</label>
+    <%= f.text_area :information ,  placeholder:"Nhập mô tả", class:"form-control",required: 'true'%>
   </div>
   <div class="form-group">
-    <label>Price</label>
-    <%= f.text_field :price , placeholder:"Enter price product", class:"form-control" ,required: 'true'%>
+    <label>Giá</label>
+    <%= f.text_field :price , placeholder:"Nhập giá sản phẩm", class:"form-control" ,required: 'true'%>
   </div>
   <div class="form-group">
-    <label>Type</label>
+    <label>Thể loại</label>
     <%= f.select :kind, Product.kinds.keys , { class: 'form-control'}%>
   </div>
   <%= f.hidden_field :category_id, value: @category.id %>
-  <h5>Add images for product</h5>
+  <h5>Thêm hình ảnh cho sản phẩm</h5>
   <div class="custom-file">
     <%= f.file_field :images , multiple: true %>
   </div>

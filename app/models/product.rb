@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
 
 
-  enum kind: {food: 0, drink: 1}
+  enum kind: {đồ_ăn: 0, đồ_uống: 1}
   
   validates :name_product, presence: true, length: { maximum: 50 }
   validates :price, presence: true, numericality: true

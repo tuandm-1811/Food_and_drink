@@ -1,20 +1,20 @@
 <div class="container bench">
-  <h2> Generate Topping </h2>
+  <h2> Tạo Topping </h2>
   <%= form_for :topping, url: admin_toppings_path, remote:true do |f|%>
   <%# [:admin, @category.products] %>
     <div class="form-group">
-      <label> Name </label>
-      <%= f.text_field :name, placeholder:"Enter name product", class:"form-control",required: 'true' %>
+      <label> Tên </label>
+      <%= f.text_field :name, placeholder:"Nhập tên topping", class:"form-control",required: 'true' %>
     </div>
     <div class="form-group">
-      <label>Price</label>
-      <%= f.text_field :price , placeholder:"Enter price product", class:"form-control" ,required: 'true'%>
+      <label>Giá</label>
+      <%= f.text_field :price , placeholder:"Nhập giá topping", class:"form-control" ,required: 'true'%>
     </div>
     <div class="form-group">
-      <label>Type</label>
+      <label>Thể loại</label>
       <%= f.select :kind, Topping.kinds.keys, {} , class: 'form-control'%>
     </div>
-    <%= f.submit "Create Topping", class: "btn btn-primary" %>
+    <%= f.submit "Tạo Topping", class: "btn btn-primary" %>
   <% end %>
 </div>
 <!-- output -->
@@ -27,10 +27,9 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Type</th>
-          <th>Action</th>
+          <th>Tên</th>
+          <th>Giá</th>
+          <th>Thể loại</th>
         </tr>
       </thead>
       <tbody id="add-topping">  

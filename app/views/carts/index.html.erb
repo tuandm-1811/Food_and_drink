@@ -1,17 +1,17 @@
 <% if @cart_items.blank? %>
-    <h3 style="text-align: center;">You haven't product in cart </h3>
-    <a class="bnr-btn btn-link go_to_meal" href="<%= products_path %>"><%= "Go and get some meal for your self"%></a>
+    <h3 style="text-align: center;">Bạn không có sản phẩm trong giỏ hàng </h3>
+    <a class="bnr-btn btn-link go_to_meal" href="<%= root_path %>"><%= "Đi kiếm bữa ăn cho riêng bạn"%></a>
 <% else %>
   <div class="container">
-    <h2 style="text-align: center; margin-bottom: 10px;">My Cart</h2>
+    <h2 style="text-align: center; margin-bottom: 10px;">Giỏ hàng của tôi</h2>
     <table class="table table-hover">
       <thead>
         <tr>
           <th></th>
-          <th>Product name</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Delete</th>
+          <th>Tên Sản phẩm</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Xóa bỏ</th>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +39,7 @@
             </script>
           </td>
           <td id="cart-price-<%=cart_item.id%>" data-pricePr="<%=cart_item.product.price%>">
-            $<%= cart_item.get_total_price %>
+            <%= cart_item.get_total_price %>VND
           </td>
           <td>
           <%= link_to cart_item_path(cart_item.id), remote:true, method: :delete, id:"delete-cart-item" do %>
@@ -55,14 +55,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9">
-          <h4> Total the Bill: </h4> 
+          <h4> Tổng hóa đơn: </h4> 
         </div>
         <div class="col-md-3">
-          <h5 id="cart-total-amount">$<%= current_cart.caculate_total_amount.sum%></h5>
+          <h5 id="cart-total-amount"><%= current_cart.caculate_total_amount.sum%>VND</h5>
           <div class="order">
             <%= form_for current_cart, url: user_addresses_path(current_user.id), method: :get, class:"form-group" do |f| %>
               <%= f.hidden_field :cart_id, value: current_cart.id %>
-              <%= f.submit "Go to order", class:"btn btn-origin" %>
+              <%= f.submit "Đặt hàng", class:"btn btn-origin go_to_order_button" %>
             <% end %>
           </div>
         </div>

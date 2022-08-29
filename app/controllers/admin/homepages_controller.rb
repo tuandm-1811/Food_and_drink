@@ -1,6 +1,7 @@
 class Admin::HomepagesController < Admin::BaseController
+  attr_accessor :products
   def index
-    
+    @category = Category.joins(:products) 
   end
 
   def search

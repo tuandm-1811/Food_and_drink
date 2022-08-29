@@ -7,11 +7,10 @@ class OrdersController < ApplicationController
     @cart_items = current_cart.cart_items 
     @address = current_user.addresses.find params[:address_id]
   end
-  def show
-    
-  end
+  def show;end
   
   def create
+    binding.pry
     unless current_cart.blank?
     @order = current_user.orders.build order_params
     @order.save_price_to_order = current_cart.total_price_after_coupons
@@ -24,14 +23,14 @@ class OrdersController < ApplicationController
       end
       OrderMailer.with(order: @order).new_order_email.deliver_later
       session[:cart_id] = nil
-      flash[:success] = 'User buyed success'
+      flash[:success] = 'Bạn đã đặt hàng thành công'
       redirect_to order_path(@order)
     else
-      flash[:danger] = 'User buyed fail'
+      flash[:danger] = 'Bạn đã đặt hàng thất bại'
       render :new
     end
     else
-      flash[:danger] = "You need to buy something!"
+      flash[:danger] = "Bạn cần phải đặt hàng!"
       redirect_to products_path
     end
   end
@@ -55,5 +54,4 @@ class OrdersController < ApplicationController
   def get_valid_to_order
     redirect_to products_path unless current_cart.present?
   end
-
 end

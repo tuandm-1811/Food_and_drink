@@ -3,16 +3,16 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="left-title-text">
-					<h3>My Account</h3>
+					<h3>Tài khoản của tôi</h3>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="right-title-text">  
 						<ul>
 							<li class="breadcrumb-item">
-								<%=link_to "Home", root_path %>
+								<%=link_to "Trang chủ", root_path %>
 							</li>
-							<li class="breadcrumb-item active" aria-current="page">My Account</li>
+							<li class="breadcrumb-item active" aria-current="page">Tài khoản của tôi</li>
 						</ul>
 					</div>
 				</div>
@@ -25,9 +25,8 @@
 				<div class="col-lg-3">
 					<div class="left-tab-links">
 						<div class="nav nav-pills nav-stacked nav-tabs ui vertical menu fluid">
-							<a href="#about" data-toggle="tab" class="item user-tab cursor-pointer">About</a>						
-							<a href="#my-orders" data-toggle="tab" class="item user-tab cursor-pointer">My Orders</a>
-							<a href="#order-history" data-toggle="tab" class="item user-tab cursor-pointer">Order History</a>	
+							<a href="#about" data-toggle="tab" class="item user-tab cursor-pointer">Về tôi</a>
+							<a href="#order-history" data-toggle="tab" class="item user-tab cursor-pointer">Lịch sử đơn hàng</a>	
 						</div>						
 					</div>				
 				</div>
@@ -36,15 +35,15 @@
 						<div class="tab-pane" id="about">
 							<div class="profile-about">
 								<div class="tab-content-heading">
-									<h4>About</h4>
-									<a href="setting.html"><i class="far fa-edit"></i>Edit Info</a>
+									<h4>Về tôi</h4>
+									<%= link_to "Edit", edit_user_path(current_user)%>
 								</div>
 								<div class="about-dtp">
 									<div class="about-bg">
 										<ul>
 											<li>
 												<div class="dp-detail">
-													<h6>Ful Name</h6>
+													<h6>Tên đẩy đủ</h6>
 													<p><%= current_user.name%></p>
 												</div>
 											</li>
@@ -56,19 +55,19 @@
 											</li>
 											<li>
 												<div class="dp-detail">
-													<h6>Birth</h6>
+													<h6>Ngày sinh</h6>
 													<p><%=current_user.birth%></p>
 												</div>
 											</li>
 											<li>
 												<div class="dp-detail">
-													<h6>Gender</h6>
+													<h6>Giới tính</h6>
 													<p><%= current_user.gender %></p>
 												</div>
 											</li>
 											<li>
 												<div class="dp-detail">
-													<h6>Social Accounts</h6>
+													<h6>Tài khoản xã hội</h6>
 													<div class="my-social-links">
 														<a href="https://www.facebook.com/" class="socail-btn-link f-btn"><i class="fab fa-facebook-f"></i></a>
 														<a href="https://www.google.com.vn/?hl=vi" class="socail-btn-link g-btn"><i class="fab fa-google"></i></a>
@@ -81,47 +80,11 @@
 									</div>
 								</div>
 							</div>
-						</div>					
-						<div class="tab-pane" id="my-orders">
-							<div class="profile-about">
-								<div class="tab-content-heading">
-									<h4>My Orders</h4>
-									<br/>
-								</div>
-								<div class="my-orders">
-									<div class="row">
-										<div class="col-lg-12 col-md-12 col-12">
-											<div class="my-checkout">
-												<div class="table-responsive">
-													<table class="table">
-														<thead>
-															<tr>
-																<th>Created Day</th>
-																<th>Total Price</th>
-																<th> Status </th>
-															</tr>
-														</thead>
-														<tbody>
-															<% @orders.each do |order|%>
-																<tr>
-																	<td><%= order.created_at.to_time%></td>
-																	<td>$<%= order.save_price_to_order.to_f %></td>
-																	<td><%= order.status %></td>
-																</tr>
-															<% end %>
-														</tbody>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						</div>			
 						<div class="tab-pane" id="order-history">
 							<div class="profile-about">
 								<div class="tab-content-heading">
-									<h4> Order History </h4>
+									<h4> Lịch sử đơn hàng </h4>
 									<br/>
 								</div>
 								<div class="my-orders">
@@ -132,18 +95,26 @@
 													<table class="table">
 														<thead>
 															<tr>
-																<th>Code Order</th>
-																<th>Created Day</th>
-																<th>Total Price</th>
-																<th> Status </th>
+																<th> Sản Phẩm</th>
+																<th> Đơn đã đặt</th>
+																<th> Tổng giá</th>
+																<th> Trạng thái </th>
 															</tr>
 														</thead>
 														<tbody>
 															<% @orders.each do |order|%>
 																<tr>
-																	<td><%= order.order_code %></td>
-																	<td><%= order.created_at.to_time%></td>
-																	<td>$<%= order.save_price_to_order.to_f %></td>
+																	<td>
+																		<% order.cart.products.each do |product| %>
+																			<%= product.name_product + ',' %>
+																		<% end %>
+																	</td>
+																	<td>
+																		<i class="far fa-clock"></i>
+																		<%= time_ago_in_words(order.created_at) if order.created_at %> ago.
+																		<%= order.created_at.strftime "%B %e, %Y" %>
+																	</td>
+																	<td><%= order.save_price_to_order.to_f %>VND</td>
 																	<td><%= order.status %></td>
 																</tr>
 															<% end %>

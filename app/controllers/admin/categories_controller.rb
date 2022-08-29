@@ -39,7 +39,7 @@ class Admin::CategoriesController < Admin::BaseController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to admin_categories_path, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_categories_path, notice: 'Sản phầm đã bị xóa.' }
       format.js
     end
   end

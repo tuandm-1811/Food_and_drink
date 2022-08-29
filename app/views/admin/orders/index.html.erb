@@ -1,0 +1,7 @@
+    <tbody>  
+        <% if @order.present? %>
+            <% @products.each_with_index  do |product, index| %>
+            <%= render 'order', order: order, index: index %>
+            <% end %>
+        <% end %>
+    </tbody>

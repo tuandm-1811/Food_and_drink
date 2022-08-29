@@ -478,7 +478,7 @@ and something more appropriate for display headings */
     }
     #header.default .topbar {
         border-bottom: 0;
-        background: #f3f3f3;
+        background: bisque;
         padding: 7px 0px;
     }
     .topbar-left {
@@ -488,7 +488,7 @@ and something more appropriate for display headings */
         text-align: right;
     }
     .topbar .list-inline {
-        font-size: 12px;
+        font-size: 18px;
         font-weight: 400;
     }
     .topbar-left li {
@@ -507,8 +507,15 @@ and something more appropriate for display headings */
     .topbar .list-inline a {
         color: #847577;
     }
-    .nav-item {
+    .nav-item a:hover {
         -webkit-transition: hide;
+    }
+    .dropdown_menu_header {
+        margin-right: -250px;
+    }
+    .header_text {
+        font-size: 20px !important;
+        padding-top: 36px;
     }
     .dropdown-menu {
         position: absolute;
@@ -563,6 +570,7 @@ and something more appropriate for display headings */
     }
     .logo-box {
         padding: 16px 0px;
+        box-sizing: 10px;
     }
     .menu-left {
         text-align: left;
@@ -675,6 +683,7 @@ and something more appropriate for display headings */
         border-radius: 3px;
         border: 1px solid #ffa803;
         background: #ffa803;
+        margin-left: 4px;
     }
     .btn-link:hover {
         color: #fff;
@@ -1591,7 +1600,7 @@ and something more appropriate for display headings */
     }
     /*** Footer ***/
     .footer {
-        background: #000;
+        background: slategray;
         clear: both;
     }
     .footer .line {
@@ -1744,12 +1753,12 @@ and something more appropriate for display headings */
         border-bottom: 1px solid #2c2c2c;
     }
     .footer .cards {
-        text-align: right;
         padding-top: 10px;
         padding-bottom: 6px;
+        margin-left: 456px;
     }
     .footer .privacy-terms {
-        padding: 12px 0px;
+        padding: 0px;
     }
     .footer .privacy-terms li {
         display: inline;
@@ -1771,6 +1780,7 @@ and something more appropriate for display headings */
         font-size: 13px;
         font-weight: 400;
         color: #999999;
+        display: none;
     }
     .footer .copyright .copyright-text i {
         margin-right: 5px;
@@ -2786,7 +2796,7 @@ and something more appropriate for display headings */
         border-radius: 3px;
     }
     .submit-btn {
-        padding: 17px 20px;
+        padding: 13px 20px;
         margin-left: 20px;
         min-height: 50px;
     }
@@ -3456,7 +3466,7 @@ and something more appropriate for display headings */
         width: 80px;
         height: 30px;
         color: #fff;
-        padding: 8px 0px;
+        padding: 5px 0px;
         cursor: pointer;
         margin-top: 11px;
         font-family: "Consolas";
@@ -4618,12 +4628,12 @@ and something more appropriate for display headings */
         background-color: #ffa803;
     }
     .total-cost {
-        padding: 20px 0;
-        ;
+        padding: 20px 8px;
         width: 100%;
         float: left;
         margin-top: 30px;
         border-top: 1px solid #e1e1e1;
+        margin-left: 34px;
         border-bottom: 1px solid #e1e1e1;
     }
     .total-text {
@@ -4651,6 +4661,7 @@ and something more appropriate for display headings */
         float: left;
         width: 100%;
         margin-bottom: 80px;
+        margin-left: 31px;
     }
     .on-btn {
         height: 50px;
@@ -5727,9 +5738,9 @@ and something more appropriate for display headings */
     }
     .login_register h1 {
         text-align: center;
-        font-size: 24px;
+        font-size: 32px;
         font-weight: 600;
-        margin-bottom: 50px;
+        margin-bottom: 9px;
     }
     .login-container {
         background-color: #fff;
@@ -8026,16 +8037,16 @@ and something more appropriate for display headings */
     .go_to_meal{
         margin-left: 740px;
     }
-    // .badge {
-    //     color: #fff;
-    //     border-radius: 50%;
-    //     padding: 2px 4px;
-    //     font-size: 9px;
-    //     font-weight: 500;
-    //     margin-bottom: 2px;
-    //     background: #ffa803;
-    //     width: 13px;
-    //     height: 13px;
-    //     text-align: center;
-    // }
+    .recover_password {
+        text-align: center;
+    }
+    .social_fix {
+        margin-right: 10px !important;
+    }
+    .go_to_order_button{
+        background-color: #ffc107;
+    }
+    .left-text-b {
+        margin-left: -131px;
+    }
 }

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title = '')
-    base_title = "Admin | Food & Drink"
+    base_title = "Quản trị viên | Đồ ăn thức uống"
     if page_title.empty?
       base_title
     else

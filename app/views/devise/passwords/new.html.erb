@@ -1,16 +1,13 @@
-<h2>Forgot your password?</h2>
+<div class="recover_password">
+  <h2>Quên mật khẩu?</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"col-lg-3 col-md-6 col-12 video-form" %>
+    <div class="actions">
+      <%= f.submit "Gửi cho tôi hướng dẫn đặt lại mật khẩu", class:" col-lg-2 col-md-6 col-12 login-btn btn-link" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

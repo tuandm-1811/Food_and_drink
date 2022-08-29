@@ -4,8 +4,10 @@ class AddressesController < ApplicationController
     @addresses = current_user.addresses
   end
   def new
-    @address = current_user.addresses.build
-  end
+    @address = current_use.addresses.new(:address_id => @address.id)
+  end 
+  def show 
+  end 
   def create
     @address = current_user.addresses.build address_params
     respond_to  do |format|  
@@ -13,19 +15,23 @@ class AddressesController < ApplicationController
         format.html { redirect_to user_addresses_path(current_user.id)}
         format.js
       else
-        format.html { render 'products/show' }
+        format.html { render 'addresses/new' }
         format.js
       end
     end 
   end
   def edit
   end
-  def update
-      
+
+  def destroy
+    @address = Address.find(params[:id])
+    if @address.present?
+      @address.destroy
+      format.html {redirect_to user_address_path(@address) }
+      format.json { head :no_content }
+    end
   end
-  def delete
-      
-  end
+
   private 
   def address_params
     params.require(:address).permit :user_name, :numberphone, :stress, :wards, :district, :province

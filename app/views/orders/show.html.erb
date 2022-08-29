@@ -1,3 +1,10 @@
-<h2>You got to buy success !</h2>
-<p> Click here to watch order history detail <%=link_to "Here", user_path(current_user.id)%> </p>
-<%= link_to "Back", root_path, class:"btn btn-warning"%>
+<div>
+    <h2>Đã đặt hàng thành công</h2>
+    <p> Bấm vào đây để xem chi tiết lịch sử đặt hàng <%=link_to "tại đây", user_path(current_user.id)%> </p>
+    <%= link_to "Quay lại", root_path, class:"btn btn-warning"%>    
+</div>
+<div class="logo-box">
+    <%= link_to root_path do %>
+        <%= image_tag 'pork.png', class:"logo img_width" %> 
+    <% end %>
+</div>

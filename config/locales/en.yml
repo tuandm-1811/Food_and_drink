@@ -32,10 +32,10 @@
 en:
   homepages:
     home:
-      title: Choose, Order and Checkout
-      exeption: Specify your address to suggest you the fast delivery
-      gotomail: Go To Meal
-      searchfood: Find Food
-      worktext1: Choose Your Area Restaurant
-      worktext2: Donec et tellus sed lorem condimentum maximus. Sed tempor, leo tempus condimentum.
+      title: Chọn, Đặt hàng và Thanh toán
+      exeption: Chỉ định địa chỉ của bạn để đề xuất cho bạn giao hàng nhanh chóng
+      gotomail: Bữa ăn
+      searchfood: Tìm bữa ăn
+      worktext1: Chọn bữa ăn gần bạn
+      worktext2: Chúng tôi luôn mang đến cho bạn những trải nghiệm tốt nhất
   layouts:

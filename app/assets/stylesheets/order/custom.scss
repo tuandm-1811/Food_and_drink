@@ -52,29 +52,32 @@
     width: 21em;
   }
   .input-1{
-    margin-left: 68px;
+    margin-left: 60px;
   }
   .input-2{
     margin-left: 2em;
   }
   .input-3{
-    margin-left: 96px;
+    margin-left: 41px;
   }
   .input-4{
-    margin-left: 90px;
+    margin-left: 84px;
   }
   .input-5{
-    margin-left: 96px;
+    margin-left: 71px;
   }
   .input-6{
-    margin-left: 76px;
+    margin-left: 47px;
+  }
+  .button_address {
+    margin-left: 80px;
   }
   .form-item .btn-primary{
     margin-left: 149px;
   }
   .address-list{
     border: 1px solid #cac6c6;
-    width: 32em;
+    width: 26em;
     height: 9em;
   }
   .address-item p{
@@ -86,4 +89,10 @@
   }
   .address-item .form-address{
     display: inline-block;
+  }
+  .custom_address_form {
+    margin-top: -136px !important;
+  }
+  .img_width {
+    width: 100%;
   }
