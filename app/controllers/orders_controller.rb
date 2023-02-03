@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
   def show;end
   
   def create
-    binding.pry
     unless current_cart.blank?
     @order = current_user.orders.build order_params
     @order.save_price_to_order = current_cart.total_price_after_coupons

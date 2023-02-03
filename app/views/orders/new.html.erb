@@ -34,7 +34,7 @@
             <%= f.hidden_field :address_id, value: current_cart.id %>
             <%= f.hidden_field :cart_id, value: current_cart.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.submit "ORDER NOW", class:"btn btn-danger"%>
+            <%= f.submit "ĐẶT HÀNG NGAY", class:"btn btn-danger"%>
             <p>(Xin vui lòng kiểm tra lại đơn hàng trước khi đặt mua)</p>
           </div>
         </div>
@@ -90,7 +90,7 @@
                 <b>Tổng đơn:</b>
               </div>
               <div class="col-md-2">
-                <h5 style="color:red;"><%= current_cart. total_price_after_coupons.to_f %>VND</h5>
+                <h5 style="color:red;"><%= current_cart.total_price_after_coupons.to_f %>VND</h5>
               </div>
             </div>
           </div>
