@@ -6,7 +6,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.3.0",
+    "@rails/webpacker": "^5.4.3",
     "admin-lte": "^3.0",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
@@ -19,6 +19,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "sass": "^1.58.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
