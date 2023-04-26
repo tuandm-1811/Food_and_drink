@@ -9,18 +9,6 @@
           <%= image_tag product.images.first %>
         <% end %>
       </div>
-      <div class="logo-img">
-        <%= image_tag product.category.image if product.category.image.attached? %>
-      </div>
-      <div class="top-text">
-        <div class="heading">
-          <h4>
-            <%= link_to category_product_path(product.category.id,product) do %>
-              <%= product.name_product%>
-            <% end %>
-          </h4>
-        </div>
-      </div>
     </div>
     <div class="bottom">
       <div class="sub-heading">
