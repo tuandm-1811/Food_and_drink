@@ -1,10 +1,13 @@
-<div>
-    <h2>Đã đặt hàng thành công</h2>
-    <p> Bấm vào đây để xem chi tiết lịch sử đặt hàng <%=link_to "tại đây", user_path(current_user.id)%> </p>
-    <%= link_to "Quay lại", root_path, class:"btn btn-warning"%>    
-</div>
-<div class="logo-box">
-    <%= link_to root_path do %>
-        <%= image_tag 'pork.png', class:"logo img_width" %> 
-    <% end %>
-</div>
+
+<body>
+    <div>
+        <section class="view-for-user">
+        <%= render 'layouts/header'%>
+        <div class="container">
+            <h2>Đã đặt hàng thành công</h2>
+            <p> Bấm vào đây để xem chi tiết lịch sử đặt hàng <%=link_to "tại đây", user_path(current_user.id)%> </p>
+        </div>
+        <%= render 'layouts/footer'%>
+        </section>  
+    </div>
+</body>

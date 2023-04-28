@@ -3131,9 +3131,9 @@ and something more appropriate for display headings */
         background-size: cover;
     }
     .form-container {
-        margin-top: 46px;
+        margin-top: 25px;
+        margin-bottom: 150px;
         border: 1px solid #e1e1e1;
-        padding: 30px;
         background: #fff;
         text-align: left;
         box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
@@ -3148,7 +3148,7 @@ and something more appropriate for display headings */
         margin-bottom: 14px;
     }
     .form-container input {
-        color: #847577;
+        color: #000000;
     }
     .video-form {
         color: #847577;
@@ -8048,5 +8048,8 @@ and something more appropriate for display headings */
     }
     .left-text-b {
         margin-left: -131px;
+    }
+    #address-delete{
+        padding: 6px;
     }
 }
