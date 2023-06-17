@@ -6,7 +6,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "^5.4.3",
+    "@rails/webpacker": "^5.4.4",
     "admin-lte": "^3.0",
     "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
@@ -15,11 +15,12 @@
     "coffeescript": "1.12.7",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "yarn": "^1.22.19"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "sass": "^1.58.0",
-    "webpack-dev-server": "^3.11.0"
+    "sass": "^1.63.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
